@@ -1,0 +1,45 @@
+{
+  "name": "bot-watson",
+  "version": "1.0.0",
+  "description": "Bot run watson",
+  "author": "Carlos Fernando Bocayuva Carvalho Filho",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "nyc mocha ./test/unit/**/*.spec.js --reporter mochawesome --reporter-options reportDir=mocha-report,reportFilename=unit-tests,reportPageTitle=[ADCC-ETL-CLICK]-UNIT-TEST-REPORT,reportTitle=[ADCC-ETL-CLICK]-UNIT-TEST-REPORT,autoOpen=false,inlineAssets=true,enableCharts=true"
+  },
+  "dependencies": {
+    "dotenv": "6.0.0",
+    "async": "2.6.1",
+    "morgan": "1.9.1",
+    "bluebird": "3.5.2",
+    "body-parser": "1.18.3",
+    "express": "^4.16.4",
+    "express-body-parser-json-error": "0.1.0",
+    "express-graceful-shutdown": "0.0.3",
+    "winston": "2.3.1",
+    "moment": "2.22.2",
+    "moment-timezone": "0.5.14",
+    "request": "2.87.0",
+    "request-promise": "4.2.2"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "eslint": "4.18.1",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-import": "2.9.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "mocha": "5.0.1",
+    "mochawesome-junit-reporter": "1.1.0",
+    "nyc": "11.4.1",
+    "rewire": "3.0.2",
+    "sinon": "4.2.2",
+    "require-dir": "0.3.2",
+    "run-sequence": "2.2.1",
+    "yargs": "11.0.0"
+  }
+}
