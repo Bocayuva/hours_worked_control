@@ -10,7 +10,6 @@ const routeHandler = require('./commons/handler/route.handler');
 const errorHandler = require('./commons/handler/error.handler');
 
 const logger = require('./commons/logger/logger');
-const moment = require('moment-timezone');
 
 const app = express();
 const server = http.createServer(app);
@@ -22,20 +21,13 @@ app.use(bodyParser.json());
 app.use(bodyParserJsonError());
 
 const httpPort = process.env.HTTP_PORT;
-const timezone = process.env.TIMEZONE;
-
-moment.tz.setDefault(timezone);
-moment.locale('pt');
-
-logger.info('Starting BOT_WATSON server');
-logger.info('Using timezone:', timezone);
 
 (async () => {
   try {
     require('./api/routes')(app);
     app.use('/healthcheck', (req, res) => res.send('success'));
     app.use('*', routeHandler, errorHandler);
-    server.listen(httpPort, () => logger.info('BOT_WATSON has started | port:', httpPort));
+    server.listen(httpPort, () => logger.info(' API has started | port:', httpPort));
   } catch (error) {
     logger.error(error);
   }

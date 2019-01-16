@@ -1,7 +1,7 @@
 {
-  "name": "bot-watson",
+  "name": "hours_worked_control",
   "version": "1.0.0",
-  "description": "Bot run watson",
+  "description": "",
   "author": "Carlos Fernando Bocayuva Carvalho Filho",
   "license": "ISC",
   "main": "index.js",
